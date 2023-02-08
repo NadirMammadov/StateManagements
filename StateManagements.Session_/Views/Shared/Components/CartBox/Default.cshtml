@@ -1,0 +1,28 @@
+﻿@model List<Cart>
+@if(Model !=null)
+{
+    @foreach (var cart in Model)
+    {
+        <li>
+            <div class="sc-productwrap">
+                <a href="product_details.html" class="sc-product-thumb">
+                    <img src="~/@cart.Image" alt="Product" class="img-fluid">
+                </a>
+                <div class="sc-product-details">
+                    <a href="product_details.html" class="sc-product-ttl">@cart.Name</a>
+                    <p class="sc-product-sz">Size : Medium</p>
+                </div>
+            </div>
+            <div class="sc-quantity">
+                1X <span class="sc-price"> @cart.Price</span>
+            </div>
+            <a href="javascript:void(0);" class="sc-produc-remove">
+                <img src="~/assets/images/index1/svg/cut.svg" alt="icon">
+            </a>
+        </li>
+    }
+
+}
+else{
+    <p>No Products</p>
+}

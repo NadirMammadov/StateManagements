@@ -1,0 +1,135 @@
+﻿@model List<Cart>
+
+<section class="e-shopcart-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-12">
+                <div class="e-shopcart-sec">                    
+                    <div class="shopcart-table-wrap mb-30">
+                        <form class="table-responsive">
+                            <table class="shopcart-table">
+                                <thead>
+                                  <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total Price</th>
+                                    <th>&nbsp;</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    @if(Model !=null)
+                                    {
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    <div class="sc-productwrap">
+                                                        <a href="product_details.html" class="sc-product-thumb">
+                                                            <img src="~/@item.Image" alt="Product" class="img-fluid">
+                                                        </a>
+                                                        <div class="sc-product-details">
+                                                            <a href="product_details.html" class="sc-product-ttl">@item.Name</a>
+                                                            <p class="sc-product-sz">Size : Medium</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="quantity-box">
+                                                        <input type="text" class="quantity" value="@item.Count">
+                                                        <span class="quantity-minus pa-sub quantity-icon"> - </span>
+                                                        <span class="quantity-plus  pa-add quantity-icon"> + </span>
+                                                    </div>
+                                                </td>
+                                                <td><span class="sc-product-prc">@item.Price</span></td>
+                                                <td><span class="sc-product-prc">@item.Total</span></td>
+                                                <td>
+                     <a href="javascript:void(0);" id="@item.Id" class="sc-produc-remove e-remove-product">
+                                                        <img src="~/assets/images/index1/svg/cut.svg" alt="icon">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                       <p>Urun yok</p>
+                                    }
+
+                                </tbody>
+                              </table>
+                        </form>
+                    </div>
+                    <div class="shopcart-bottom mb-30">
+                        <ul class="shopcart-dis-list">
+                            <li>                                
+                                <div class="sc-dcinput">
+                                    <div class="sc-diswrap">
+                                        <img src="~/assets/images/index1/svg/discount_Per.svg" alt="icon">
+                                        <span>Discount Code</span>
+                                    </div>
+                                    <div class="sc-disinputwrap">
+                                        <form>
+                                            <div class="e-nl-box boreder">
+                                                <input type="text" placeholder="Enter discount code here">
+                                                <a href="javascript:void(0);" class="e-btn newsletter-btn">Apply Coupon</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>                                
+                                <a href="javascript:void(0);" class="e-btn black update-cart">Update Cart</a>
+                            </li>
+                        </ul>
+                    </div> 
+                </div>                      
+            </div>            
+            <div class="col-xl-3 col-lg-12">
+                <div class="e-shopcart-sidebar">
+                    <div class="e-totalsumry mb-30">
+                        <div class="e-totalsumry-header">
+                            <h2 class="e-totalsumry-ttl">Cart Totals Summary</h2>
+                        </div>
+                        <div class="e-totalsumry-body">
+                            <ul class="e-totalsumry-list">
+                                <li>
+                                    <span class="ts-list-head">Subtotal:</span>
+                                    <span class="ts-list-shead">$2,240</span>
+                                </li>
+                                <li>
+                                    <span class="ts-list-head">Shipping:</span>
+                                    <span class="ts-list-shead">$22</span>
+                                </li>
+                            </ul>
+                            <a href="edit_address.html" class="ts-chngadd">Change Address
+                                <img src="assets/images/index1/svg/edit.svg" alt="edit">
+                            </a>
+                        </div>  
+                        <div class="e-totalsumry-fotr">
+                            <ul class="e-totalsumry-list total">
+                                <li>
+                                    <span class="ts-list-head">Grand Total</span>
+                                    <span class="ts-list-shead">$2,262</span>
+                                </li>
+                            </ul>
+                        </div>  
+                    </div> 
+                    <a href="shipping_cart.html" class="e-btn">Proceed To Checkout</a>
+                </div>                      
+            </div>            
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter start -->
+
+
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/SmoothScroll.min.js"></script>
+    <script src="~/assets/js/jquery.nice-select.min.js"></script>
+    <script src="~/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/assets/js/custom.js"></script>

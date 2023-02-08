@@ -1,0 +1,28 @@
+version: '3.4'
+
+services:
+
+  code.db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      - network1
+ 
+  statemanagements.session_:
+    image: ${DOCKER_REGISTRY-}statemanagementssession
+    networks:
+      - network1
+    build:
+      context: .
+      dockerfile: StateManagements.Session_/Dockerfile
+
+
+networks:
+  network1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.0.0/24
+          gateway: 172.23.0.1
+
+volumes:
+  code_database_volume:

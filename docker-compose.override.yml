@@ -1,0 +1,22 @@
+version: '3.4'
+
+services: 
+  code.db:
+    container_name: code.db
+    restart: always
+    ports:
+      - "1433:1433"
+    volumes:
+      - code_database_volume:/var/opt/mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pro247!!
+       
+  statemanagements.session_:
+    container_name: code.sessionapp
+    environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+    ports:
+      - "${CODE_ACADEMY_SESSIONAPP_PORT}:80"
+    depends_on:
+      - code.db
