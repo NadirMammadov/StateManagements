@@ -15,6 +15,5 @@ document.querySelectorAll('.cart').forEach(item => {
 //})
 connection.on("ShowCartItemCount", function (itemcount) {
     var boxelement = document.getElementsByClassName("hs-cart-circle");
-    console.log(boxelement);
     boxelement.value = itemcount;
 })
