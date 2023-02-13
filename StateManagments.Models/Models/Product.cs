@@ -7,7 +7,7 @@ public class Product
     public int Id { get; set; }
     public string Name { get; set; } = null!;
     [Column(TypeName = "decimal(12, 2)")]
-    public decimal? UnitPrice { get; set; }
+    public decimal UnitPrice { get; set; }
     public short? UnitsInStock { get; set; }
 
     public string? MainImage { get; set; }

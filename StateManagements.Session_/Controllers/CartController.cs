@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StateManagements.Models.Models;
+using StateManagements.Session_.Models;
 using StateManagements.Session_.SessionExtension;
 using StateManagments.Models.Data;
 
@@ -56,7 +57,7 @@ public class CartController : Controller
     public IActionResult Index()
     {
         var data =  HttpContext.Session.Get<List<Cart>>(CART_KEY);
-        return View(data);
+        return View(data); 
     }
     
     [HttpPost]
@@ -68,7 +69,7 @@ public class CartController : Controller
             return BadRequest();
 
         var carts = HttpContext.Session.Get<List<Cart>>(CART_KEY) ?? new List<Cart>();
-
+       
         var existingCart = carts.FirstOrDefault(x => x.Id == id);
         if (existingCart == null)
         {
@@ -85,7 +86,6 @@ public class CartController : Controller
             existingCart.Count++;
 
         HttpContext.Session.Set<List<Cart>>(CART_KEY, carts);
-
         return Json(data: carts);
     }
      

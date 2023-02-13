@@ -6,7 +6,7 @@ using StateManagments.Models.Data;
 namespace StateManagments.Models;
 public static class GlobalConfiguration
 {
-    public static IServiceCollection ModelsConfifuration(this IServiceCollection services,IConfiguration configuration)
+    public static IServiceCollection ModelsConfiguration(this IServiceCollection services,IConfiguration configuration)
     {
         services.AddDbContext<StateManagmentContext>(opt =>
         {

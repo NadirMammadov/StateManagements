@@ -66,7 +66,7 @@ namespace StateManagments.Models.Migrations
                     b.Property<string>("OverlayImage")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal?>("UnitPrice")
+                    b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(12, 2)");
 
                     b.Property<short?>("UnitsInStock")
@@ -79,6 +79,34 @@ namespace StateManagments.Models.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("StateManagments.Models.Models.Food", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Price")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Src")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Foods");
+                });
+
             modelBuilder.Entity("StateManagements.Models.Models.Product", b =>
                 {
                     b.HasOne("StateManagements.Models.Models.Category", "Category")
@@ -88,8 +116,21 @@ namespace StateManagments.Models.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("StateManagments.Models.Models.Food", b =>
+                {
+                    b.HasOne("StateManagements.Models.Models.Category", "Category")
+                        .WithMany("Foods")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("StateManagements.Models.Models.Category", b =>
                 {
+                    b.Navigation("Foods");
+
                     b.Navigation("Products");
                 });
 #pragma warning restore 612, 618

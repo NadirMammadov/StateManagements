@@ -32,6 +32,7 @@ namespace StateManagements.Session_.Controllers
         }
         public async  Task<IActionResult> Index()
         {
+            
             return View();
         }
 

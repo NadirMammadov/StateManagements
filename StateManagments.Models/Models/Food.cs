@@ -13,7 +13,7 @@ namespace StateManagments.Models.Models
         public string Name { get; set; } = null!;
         public string? Price { get; set; }
         public string? Src { get; set; }
-        public int CategoryId { get; set; }
+        public int CategoryId { get; set; } 
         public Category? Category { get; set; }
     }
    
