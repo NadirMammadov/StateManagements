@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StateManagements.Cookie_", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StateManagments.TempData_", "..\StateManagments.TempData_\StateManagments.TempData_.csproj", "{5706F67F-D615-4331-8395-8BD936027682}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StateManagaments.Cache_Redis_", "StateManagaments.Cache_Redis_\StateManagaments.Cache_Redis_.csproj", "{594E3479-0222-4237-8D3D-F91BD3246D6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{5706F67F-D615-4331-8395-8BD936027682}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5706F67F-D615-4331-8395-8BD936027682}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5706F67F-D615-4331-8395-8BD936027682}.Release|Any CPU.Build.0 = Release|Any CPU
+		{594E3479-0222-4237-8D3D-F91BD3246D6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{594E3479-0222-4237-8D3D-F91BD3246D6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{594E3479-0222-4237-8D3D-F91BD3246D6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{594E3479-0222-4237-8D3D-F91BD3246D6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

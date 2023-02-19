@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StateManagements\StateManagments.Models\StateManagments.Models.csproj" />
+    <ProjectReference Include="..\StateManagments.Models\StateManagments.Models.csproj" />
   </ItemGroup>
 
 </Project>

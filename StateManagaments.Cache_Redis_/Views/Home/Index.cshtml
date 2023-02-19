@@ -1,15 +1,14 @@
-﻿@model IEnumerable<FoodDto>
-
+﻿
 @{
     ViewData["Title"] = "Index";
 }
 <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
 
 
-    @foreach (var food in Model)
-    {
-        <div class="col  mt-3">
-            <div class="card shadow-sm">
+
+    <div id="col" class="col  mt-3">
+       
+            @*<div class="card shadow-sm">
                 <img class="card-img-top" src="@food.Src" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">@food.Name</h5>
@@ -22,7 +21,8 @@
                     <li class="list-group-item">Kategori @food.CategoryName</li>
                 </ul>
 
-            </div>
-        </div>
-    }
+            </div>*@
+            
+      
+      </div>     
 </div>

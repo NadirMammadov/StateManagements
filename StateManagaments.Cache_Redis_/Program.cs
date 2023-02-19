@@ -3,14 +3,12 @@ using StateManagaments.Cache_Redis_.Hubs;
 using StateManagaments.Cache_Redis_.Interfaces;
 using StateManagaments.Cache_Redis_.Repository;
 using StateManagments.Models;
-using System.ComponentModel;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSignalR();
 builder.Services.ModelsConfiguration(builder.Configuration);
 // Add services to the container.
-builder.Services.AddHostedService<BackgroundWorkerService>();
-
+builder.Services.AddScoped<IFoodRepository,FoodRepository>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddStackExchangeRedisCache(options =>
@@ -19,6 +17,8 @@ builder.Services.AddStackExchangeRedisCache(options =>
     options.InstanceName = "CodeAcademyRedis_";
 });
 builder.Services.AddScoped<IFoodRepository, FoodRepository>();
+builder.Services.AddHostedService<BackgroundWorkerService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
